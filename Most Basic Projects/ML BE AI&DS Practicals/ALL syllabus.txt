@@ -1,0 +1,34 @@
+1. Apply LDA Algorithm on Iris Dataset and classify which species a given flower
+belongs to.
+Dataset Link:https://www.kaggle.com/datasets/uciml/iris
+
+2. . Use the diabetes data set from UCI and Pima Indians Diabetes data set for performing
+the following:
+a. Univariate analysis: Frequency, Mean, Median, Mode, Variance, Standard
+Deviation, Skewness and Kurtosis
+b. Bivariate analysis: Linear and logistic regression modeling
+c. Multiple Regression analysis
+d. Also compare the results of the above analysis for the two data sets
+Dataset link: https://www.kaggle.com/datasets/uciml/pima-indians-diabetes-database
+
+3. Use different voting mechanism and Apply AdaBoost (Adaptive Boosting), Gradient
+Tree Boosting (GBM), XGBoost classification on Iris dataset and compare the
+performance of three models using different evaluation measures.
+Dataset Link: https://www.kaggle.com/datasets/uciml/iris
+
+
+4. Build a Tic-Tac-Toe game using reinforcement learning in Python by using following
+tasks
+a. Setting up the environment
+b. Defining the Tic-Tac-Toe game
+c. Building the reinforcement learning model
+d. Training the model
+e. Testing the model
+
+
+5. Implement K-Means clustering on Iris.csv dataset. Determine the number of clusters
+using the elbow method.
+Dataset Link: https://www.kaggle.com/datasets/uciml/iris
+
+
+6. Implementation of Support Vector Machines (SVM) for classifying images of handwritten digits into their respective numerical classes (0 to 9).
