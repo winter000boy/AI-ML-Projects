@@ -10,8 +10,16 @@ current_dir = os.path.dirname(os.path.abspath(__file__))
 # Construct the full path to the pickle file
 model_path = os.path.join(current_dir, 'cancer.pkl')
 
-# Load the model
-model = pickle.load(open(model_path, 'rb'))  # Load the model in rb = "Read Binary mode"
+# Load the model with error handling
+try:
+    with open(model_path, 'rb') as f:
+        model = pickle.load(f)
+except FileNotFoundError:
+    model = None
+    print("Model file 'cancer.pkl' not found. Please ensure it's in the correct directory.")
+except Exception as e:
+    model = None
+    print(f"Error loading model: {e}")
 
 # Flask app
 app = Flask(__name__)
@@ -22,13 +30,17 @@ def home():
 
 @app.route('/predict', methods=['POST'])
 def predict():
-    features = request.form['features']
-    features = features.split(',')
-    np_features = np.asarray(features, dtype=np.float32)
+    try:
+        features = request.form['features']
+        features = features.split(',')
+        np_features = np.asarray(features, dtype=np.float32)
 
-    # prediction
-    pred = model.predict(np_features.reshape(1, -1))
-    message = ['Cancrouse' if pred[0] == 1 else 'Not Cancrouse']
+        # Prediction
+        pred = model.predict(np_features.reshape(1, -1))
+        message = ['Cancrouse' if pred[0] == 1 else 'Not Cancrouse']
+    except Exception as e:
+        message = [f"Error in prediction: {e}"]
+
     return render_template('Index.html', message=message)
 
 # Python main
