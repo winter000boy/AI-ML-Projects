@@ -17,5 +17,5 @@ To run this project, make sure you have Python and the required libraries instal
 ### 1. Clone this repository
 
 ```bash
-git clone https://github.com/your-username/breast-cancer-detection-ml.git
+git clone https://github.com/winter000boy/breast-cancer-detection-ml.git
 cd breast-cancer-detection-ml
